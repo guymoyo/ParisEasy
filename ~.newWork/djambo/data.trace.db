@@ -1,0 +1,63 @@
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATEGORY_PARIS" not found; SQL statement:
+alter table category_paris drop constraint FK71E9030A4360BEFE [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CHOIX" not found; SQL statement:
+alter table choix drop constraint FK5A40B591FEBFFA4 [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CHOIX" not found; SQL statement:
+alter table choix drop constraint FK5A40B59DD904F64 [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DEPOSIT" not found; SQL statement:
+alter table deposit drop constraint FK5CA7169E4360BEFE [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DEPOSIT" not found; SQL statement:
+alter table deposit drop constraint FK5CA7169E68037A9 [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "EQUIP" not found; SQL statement:
+alter table equip drop constraint FK5C468304360BEFE [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "EVENT" not found; SQL statement:
+alter table event drop constraint FK5C6729A4360BEFE [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LEAGUE" not found; SQL statement:
+alter table league drop constraint FKBE08522F4360BEFE [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PANIER" not found; SQL statement:
+alter table panier drop constraint FKC4A9451968037A9 [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PARIS" not found; SQL statement:
+alter table paris drop constraint FK658198B4360BEFE [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PARIS" not found; SQL statement:
+alter table paris drop constraint FK658198B1EC8B1C2 [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PARIS" not found; SQL statement:
+alter table paris drop constraint FK658198B1941780E [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PARIS" not found; SQL statement:
+alter table paris drop constraint FK658198BF3E53CC5 [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "RENCONTRE" not found; SQL statement:
+alter table rencontre drop constraint FK6C7D51404360BEFE [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "RENCONTRE" not found; SQL statement:
+alter table rencontre drop constraint FK6C7D5140BF4B5D8B [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "RENCONTRE" not found; SQL statement:
+alter table rencontre drop constraint FK6C7D5140BF4B5D8A [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "RENCONTRE" not found; SQL statement:
+alter table rencontre drop constraint FK6C7D5140D04E6990 [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "RENCONTRE" not found; SQL statement:
+alter table rencontre drop constraint FK6C7D5140CCA6030A [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "RETRAIT" not found; SQL statement:
+alter table retrait drop constraint FK4177CBBB4360BEFE [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "RETRAIT" not found; SQL statement:
+alter table retrait drop constraint FK4177CBBB68037A9 [42102-164]
+12-10 16:59:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SPORT_TYPE" not found; SQL statement:
+alter table sport_type drop constraint FKFF7AA9254360BEFE [42102-164]

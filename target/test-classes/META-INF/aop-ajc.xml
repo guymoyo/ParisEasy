@@ -1,0 +1,31 @@
+<aspectj>
+<aspects>
+<aspect name="com.guymoyo.domain.RetraitDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.EventDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.SocieteDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.ChoixDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.RetraitDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.PanierDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.ParisDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.EventDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.DepositDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.RencontreDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.ChoixDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.SportTypeDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.CategoryParisDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.EquipDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.LeagueDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.UserAccountDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.PanierDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.SportTypeDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.ParisDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.RencontreDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.DepositDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.CategoryParisDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.EquipDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.LeagueDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.guymoyo.domain.UserAccountDataOnDemand_Roo_Configurable"/>
+<aspect name="com.guymoyo.domain.SocieteDataOnDemand_Roo_DataOnDemand"/>
+</aspects>
+</aspectj>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<f:view locale="#{localeBean.locale}" contentType="text/html">
+  <h:head>
+    <ui:insert name="header">
+      <ui:include src="header.xhtml" />
+    </ui:insert>
+    <link href="../resources/djambo/bootstrap/css/bootstrap.css" rel="stylesheet" />  
+      <link href="../resources/djambo/bootstrap/css/layout.css" rel="stylesheet" /> 
+  </h:head>
+  <h:body>
+  <div class="navbar navbar-fixed-top">  
+      <div class="navbar-inner">  
+        <div class="container-fluid">  
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">  
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+          </a>    
+          <div class="nav-collapse">  
+            <ul class="nav">  
+              <li class="active"><a href="/pages/main.jsf" >Home</a></li>  
+              <li><a href="#about">About</a></li>  
+              <li><a href="#contact">Contact</a></li> 
+               <li><a href="#help">Help</a></li> 
+                <li class="dropdown" id="accountmenu" style="margin-left: 700px;">  
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i>My account<b class="caret"></b></a>  
+                        <ul class="dropdown-menu">  
+                            <li><a href="/pages/rencontre.jsf">Manager</a></li>  
+                            <li><a href="#">Casheir</a></li>   
+                            <li><a href="#">User</a></li> 
+                            <li class="divider"></li>  
+                            <li><a href="#">Sign out</a></li>  
+                        </ul>  
+                 </li>  
+            </ul>  
+            
+            <a class="navbar-text pull-right" href="#">Djambo</a>  
+          </div><!--/.nav-collapse -->  
+        </div>  
+      </div>  
+    </div>
+    <h:panelGrid cellspacing="0" cellpadding="0" styleClass="wrapper">
+      <h:panelGrid columns="2" columnClasses="menu,content">
+        <p:panel cellspacing="0" cellpadding="0" styleClass="menu">
+          <h:form id="menuForm">
+            <h:link outcome="main">
+              <h:graphicImage library="images" name="roo_logo.png" styleClass="banner" alt="Spring Roo" />
+            </h:link>
+            <ui:insert name="menu">
+              <ui:include src="menu.xhtml" />
+            </ui:insert>
+          </h:form>
+        </p:panel>
+        <h:panelGroup>
+          <h:panelGrid cellspacing="0" cellpadding="0" styleClass="content">
+            <ui:insert name="content" />
+          </h:panelGrid>
+          <ui:insert name="footer">
+            <ui:include src="footer.xhtml" />
+          </ui:insert>
+        </h:panelGroup>
+      </h:panelGrid>
+    </h:panelGrid>
+  </h:body>
+</f:view>
+</html>

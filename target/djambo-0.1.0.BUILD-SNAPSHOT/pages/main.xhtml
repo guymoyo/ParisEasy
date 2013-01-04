@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+     >
+      
+<f:view locale="#{localeBean.locale}" contentType="text/html"> 
+  <h:head>   
+    <title>Welcome</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    <meta name="description" content="djambo allows you to play your paris on line"/>  
+    <meta name="author" content="guymoyo" />  
+  
+    <!-- Le styles -->  
+    <link href="../resources/djambo/bootstrap/css/bootstrap.css" rel="stylesheet" />  
+      <link href="../resources/djambo/bootstrap/css/layout.css" rel="stylesheet" /> 
+       <link href="../resources/djambo/bootstrap/css/custom.css" rel="stylesheet" /> 
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->  
+    <!--[if lt IE 9]>  
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>  
+    <![endif]-->  
+  
+    <!-- Le fav and touch icons -->  
+    <link rel="shortcut icon" href="twitter-bootstrap-v2/docs/examples/images/favicon.ico"/>  
+    <link rel="apple-touch-icon" href="twitter-bootstrap-v2/docs/examples/images/apple-touch-icon.png"/>  
+    <link rel="apple-touch-icon" sizes="72x72" href="twitter-bootstrap-v2/docs/examples/images/apple-touch-icon-72x72.png"/>  
+    <link rel="apple-touch-icon" sizes="114x114" href="twitter-bootstrap-v2/docs/examples/images/apple-touch-icon-114x114.png"/>  
+  </h:head>  
+  <h:body> 
+  
+	<p:ajaxStatus >	
+		<f:facet name="start">	
+			    <div class="progress progress-danger
+				    progress-striped active">
+				    <div class="bar"
+				    style="width: 40%;"></div>
+			    </div>	
+		</f:facet>
+	</p:ajaxStatus>
+									 
+    <div class="navbar navbar-fixed-top">  
+      <div class="navbar-inner">  
+        <div class="container-fluid">  
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">  
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+          </a>    
+          <div class="nav-collapse row-fluid">  
+            <ul class="nav">  
+              <li class="active"><a href="/pages/main.jsf" >Home</a></li>  
+              <li><a data-toggle="modal" href="#about" >About</a></li>  
+              <li><a data-toggle="modal" href="#contact">Contact</a></li> 
+               <li><a data-toggle="modal" href="#help">Help</a></li> 
+                <li class="dropdown " id="accountmenu" style="">  
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> My account<b class="caret"></b></a>  
+                        <ul class="dropdown-menu">  
+                            <li><a href="#">Manager</a></li>  
+                            <li><a href="#">Casheir</a></li>   
+                            <li><a href="#">User</a></li> 
+                            <li class="divider"></li>  
+                            <li><a href="#" ><i class="icon-lock" ></i> Sign out</a></li>  
+                        </ul>  
+                 </li>  
+            </ul>  
+            
+            <a class="navbar-text pull-right" href="#">Djambo</a>  
+          </div><!--/.nav-collapse -->  
+        </div>  
+      </div>  
+    </div>  
+    <div class="container-fluid">  
+   	 <div class="row-fluid" >
+		<div class="span9 well row-fluid" style="height:200px;padding: 2px;" >
+			<div style="z-index: 100;position: absolute;height: 130px;width: 230px;" class="well" >
+				<form class="form-inline">
+					<input type="text" class="input-small" placeholder="league" />
+					<input type="text" class="input-small" placeholder="sport" />
+				</form>
+				<form class="form-inline">
+					<input type="text" class="input-small" placeholder="equipe" />
+					<input type="text" class="input-small" placeholder="date" />
+				</form>
+				<a class="btn btn-primary btn-success">
+					Search
+				</a>
+			</div>
+			<img src="../resources/images/ban.jpg" style="height:195px;width:1000px" />
+		</div>
+		
+		<div class="span3 well" style="padding:5px;">
+			<div class="well" >
+				<div class="span6"><a class="btn btn-primary" data-toggle="modal" href="#sign" >Sign up</a>  </div>
+				<div class="span2"><p:graphicImage value="../resources/images/facebook.png" /></div>
+				<div class="span2"><p:graphicImage value="../resources/images/twitter.png" /></div>
+				<div class="span2"><p:graphicImage value="../resources/images/youtube.png" /></div>
+			</div>
+			<div class="well" style="margin: 4px;height:60px;" >
+				<p:outputPanel id="panier">
+					<div class="span6"  id="idpanier" style="">
+					<h:form>
+					<p:commandLink oncomplete="$('#car').modal('show');" update=":carPanel" >
+						<p:graphicImage value="../resources/images/panie.png" />
+					</p:commandLink>
+					</h:form>
+					</div>
+					<div class="span6"  >
+						<h4><i><b><h:outputText value="#{panierBean.panier.nbreItem}"></h:outputText></b> items</i></h4>
+						<h3><i><b>0</b> fcfa</i></h3>
+					</div>
+				</p:outputPanel>
+			</div>		
+		</div>
+	</div>
+	<div class="row-fluid" > 
+		<div class="span2" style="margin-left:0px;" >
+			<div class="well sidebar-nav">  
+            <ul class="nav nav-list">  
+              <li class="nav-header">LEAGUE</li>  
+              <li class="active"><a href="#">can</a></li>  
+              <li><a href="#">coupe du monde</a></li>  
+              <li><a href="#">champion league</a></li>  
+              <li><a href="#">championat espagnol</a></li>  
+              <li class="nav-header">SPORT</li>  
+              <li><a href="#">football</a></li>  
+              <li><a href="#">basket</a></li>  
+              <li><a href="#">tennis</a></li>  
+              <li class="nav-header">EXPORT</li>  
+              <li><a href="#">as pdf</a></li>  
+              <li><a href="#">as excel</a></li> 
+               <li class="nav-header">BEST CHOICE</li> 
+           </ul>  
+          </div><!--/.well -->  
+		</div>
+		<div class="span10 well" >
+			<p:dataGrid var="rencontre" value="#{frontendBean.rencontres}" paginator="true" paginatorPosition="bottom" >				
+				<p:column>						
+					<p:panel header="#{rencontre.equipeA} # #{rencontre.equipeB}" style="height:250px;">
+					<table class="table">
+						<thead>				
+						<tr>
+							<th></th>
+							<ui:repeat var="category" value="#{frontendBean.categories}">
+								<th><h:outputText value="#{category}" /></th>
+							</ui:repeat>
+						</tr>
+						</thead>
+						<tbody>
+						<ui:repeat var="event" value="#{frontendBean.events}">
+							<tr>
+								<td><h:outputText value="#{event}" /></td>
+								<ui:repeat var="category" value="#{frontendBean.categories}">
+									<td style="padding: 2px 0px;margin: -2px;">							
+									<h:form>
+										<div id="#{rencontre.parisMap[category][event].id}" style="display:none;z-index: 100;margin-top: 3px;position: absolute;" >
+											<img src="../resources/images/bal.png" alt="" />
+										</div>								
+										<p:commandButton value="#{rencontre.parisMap[category][event].cote.toString()}" oncomplete="anim(#{rencontre.parisMap[category][event].id})" action="#{panierBean.select}"  styleClass="btn" update=":panier" >
+											<f:setPropertyActionListener value="#{rencontre.parisMap[category][event]}" target="#{panierBean.selectedParis}"></f:setPropertyActionListener>
+										</p:commandButton>
+									</h:form>
+									</td>
+								</ui:repeat>
+							</tr>
+						</ui:repeat>
+						</tbody>
+						<tfoot>
+						<tr>
+							
+							<h:outputText id="text" value="#{rencontre.rencontreDate}" >
+								<f:convertDateTime pattern="dd/MM/yyyy" timeZone="Europe/Paris" />
+							</h:outputText>
+							<h:outputText value=", #{rencontre.lieu}" ></h:outputText>
+						</tr>
+						</tfoot>
+					</table>	
+					</p:panel>					
+				</p:column>
+		   </p:dataGrid>
+			
+		</div>
+    	 
+    </div>
+  </div>
+  <!-- modal about -->
+      <div class="modal" id="about" style="display: none;" >
+	    <div class="modal-header">
+	    	 <a class="close" data-dismiss="modal">×</a>
+	   		 <h3>About</h3>
+	    </div>
+	    <div class="modal-body">
+	   		 <p>This application is a bookmaker app to allows people make their paris on sport online…</p>
+	   		 <p>built on jsf 2.0, primefaces, spring, bootstrap, jquery, hibernate, java, apache solr</p>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#" class="btn" data-dismiss="modal" >Close</a>
+	    </div>
+    </div>
+     <!-- modal contact -->
+      <div class="modal" id="contact" style="display: none;" >
+	    <div class="modal-header">
+	    	 <a class="close" data-dismiss="modal">×</a>
+	   		 <h3>Contact</h3>
+	    </div>
+	    <div class="modal-body">
+	   		 <p>guymoyo@yahoo.fr</p>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#" class="btn" data-dismiss="modal" >Close</a>
+	    </div>
+    </div>
+    <!-- modal help -->
+      <div class="modal" id="help" style="display: none;" >
+	    <div class="modal-header">
+	    	 <a class="close" data-dismiss="modal">×</a>
+	   		 <h3>Help</h3>
+	    </div>
+	    <div class="modal-body">
+	   		 <p>we have 3 actors:
+	   		 	<ul>
+	   		 		<li>manager</li>
+	   		 		<p>his job is to configure system, create entities like league, paris etc..</p>
+	   		 		<li>casheir</li>
+	   		 		<p>increase or decrease money in account of a user</p>
+	   		 		<li>user</li>
+	   		 		<p>view history money transaction,view old paris,change profil, decide to retrieve his money,select paris and play</p>
+	   		 	</ul>
+	   		 </p>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#" class="btn" data-dismiss="modal" >Close</a>
+	    </div>
+    </div>
+     <!-- modal sign up -->
+      <div class="modal" id="sign" style="display: none;" >
+	    <div class="modal-header">
+	    	 <a class="close" data-dismiss="modal">×</a>
+	   		 <h3>Sign up</h3>
+	    </div>
+	    <div class="modal-body">
+	   		 <p>not yet implemented</p>
+	   		 <p>we can use a SaaS like facebook for authentification</p>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#" class="btn" data-dismiss="modal" >Close</a>
+	    </div>
+    </div>
+     <!-- modal panier -->
+      <div class="modal" id="car" style="display: none;" >
+	    <div class="modal-header">
+	    	 <a class="close" data-dismiss="modal">×</a>
+	   		 <h3>Pannier</h3>
+	    </div>
+	    <div class="modal-body">
+	   		<p:outputPanel id="carPanel" >
+	   			<h:form>
+	   				<h:outputText value="your money:"></h:outputText>
+	   				<h:inputText></h:inputText>
+	   				<p:dataTable var="choice" value="#{panierBean.panier.listChoix}">	
+						<p:column>																		
+							<h:outputText value="#{choice}" />	
+						</p:column>	
+						<p:column>
+							<p:commandButton id="deleteButton" icon="ui-icon-trash" oncomplete="" title="#{messages.label_delete}">
+             				
+           				   </p:commandButton>
+						</p:column>		
+					</p:dataTable>
+					<hr/>
+	   				<h:outputText value="total gain:"></h:outputText>
+	   			</h:form>
+	   		</p:outputPanel>
+	    </div>
+	    <div class="modal-footer">
+	    	<a class="btn btn-succes" href="#" >Continue</a>
+	    	<a href="#" class="btn" data-dismiss="modal" >Close</a>
+	    </div>
+    </div>
+    <!--/row-->  
+          <hr/>  
+     <footer>  
+        <p>© djambo 2012</p>  
+      </footer>  
+      
+    <!-- Le javascript  
+    ================================================== -->  
+    <!-- Placed at the end of the document so the pages load faster -->  
+   <script src="../resources/djambo/bootstrap/js/jquery-1.8.1.js"></script>
+    <script src="../resources/djambo/bootstrap/js/jquery-ui-1.9.2.custom.js"></script>
+ 	 <script src="../resources/djambo/bootstrap/js/bootstrap-dropdown.js"></script> 
+    <script src="../resources/djambo/bootstrap/js/bootstrap-modal.js"></script>
+     <script type="text/javascript">  
+        
+       jQuery(document).ready(function () {  
+    	   jQuery('.dropdown-toggle').dropdown();
+        });
+                
+   </script>
+   <script type="text/javascript" >
+  <!-- to remove ssome primefaces styles -->
+  		jQuery(function(){
+    		
+    		jQuery("button").toggleClass("ui-button")
+    		jQuery("button").toggleClass("ui-widget")
+    		jQuery("button").toggleClass("ui-state-default")
+    		jQuery("button").toggleClass("ui-corner-all")
+    		jQuery("button").toggleClass("ui-button-text-only")
+    		
+    	});
+
+    </script>
+   
+  
+   <script type="text/javascript" >
+   
+   function anim(id) {
+		$('#'+id).css("display", "block");
+		$('#'+id).animate({ right: 250, top:190, opacity: 0 }, 1500);
+		setTimeout(function(){
+				$('#idpanier').effect("shake", { times:3, distance:3 }, 300);
+			},1350);
+		
+		setTimeout(function(){
+   			$('#'+id).css("right", "auto");
+   			$('#'+id).css("top", "auto");
+   			$('#'+id).css("display", "none");
+   			$('#'+id).css("opacity", 1);
+   		},1500);
+		
+		}
+   		
+   </script>   
+ 
+   									 
+  </h:body> 
+</f:view>
+</html> 

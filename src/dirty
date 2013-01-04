@@ -1,0 +1,17 @@
+<p:panel header="#{rencontre.equipeA} # #{rencontre.equipeB}">
+					<p:panelGrid>					
+						<p:row>
+							<ui:repeat var="category" value="#{frontendBean.categories}">
+								<p:column><h:outputText value="#{category}" /></p:column>
+							</ui:repeat>
+						</p:row>
+						<ui:repeat var="event" value="#{frontendBean.events}">
+							<p:row>
+								<p:column><h:outputText value="#{event}" /></p:column>
+								<ui:repeat var="category" value="#{frontendBean.categories}">
+									<p:column><h:outputText value="#{rencontre.parisMap[category][event].cote}" /></p:column>
+								</ui:repeat>
+							</p:row>
+						</ui:repeat>
+					</p:panelGrid>	
+					</p:panel>

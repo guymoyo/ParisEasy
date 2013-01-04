@@ -1,0 +1,152 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-12-10 14:41:50
+project --topLevelPackage com.guymoyo --projectName djambo
+persistence setup --provider HIBERNATE --database H2_IN_MEMORY --userName sa --password sa
+enum type --class ~.domain.RoleName
+enum constant --name ROLE_ADMIN
+enum constant --name ROLE_MANAGER
+enum constant --name ROLE_Casheir
+enum constant --name ROLE_Simple
+enum type --class ~.domain.Gender
+enum constant --name Male
+enum constant --name Female
+enum constant --name Neutral
+enum type --class ~.domain.Etat
+enum constant --name SUCCES
+enum constant --name ECHEC
+enum constant --name NEUTRE
+entity jpa --class ~.domain.UserAccount 
+field string --fieldName username --notNull --sizeMin 3 --unique 
+field string --fieldName password --sizeMin 5 --notNull --unique 
+field enum --fieldName roles --type ~.domain.RoleName --notNull 
+field string --fieldName firstName
+field string --fieldName lastName --notNull
+field string --fieldName fullName
+field number --fieldName account --type java.math.BigDecimal
+field enum --fieldName gender --type ~.domain.Gender
+field string --fieldName identityNumber --unique
+field string --fieldName phoneNumber
+field string --fieldName email 
+field string --fieldName nationality
+field string --fieldName profession 
+field file --fieldName image --contentType JPG
+field boolean --fieldName blackList 
+field date --fieldName entryDate --type java.util.Date --dateTimeFormatPattern "dd-MM-yyyy hh:mm:ss" --persistenceType JPA_TIMESTAMP --notNull 
+service --interface ~.service.UserAccountService  --entity ~.domain.UserAccount
+dod
+entity jpa --class ~.domain.Societe 
+field string --fieldName Name --notNull
+field string --fieldName Address
+field string --fieldName CodePostal
+field string --fieldName City
+field string --fieldName Email
+field string --fieldName PhoneNumber
+field string --fieldName Fax
+field string --fieldName WebPage
+field number --fieldName TVA --type java.math.BigDecimal
+service --interface ~.service.SocieteService  --entity ~.domain.Societe
+dod
+entity jpa --class ~.domain.Equip 
+field string --fieldName name --notNull
+field string --fieldName description --sizeMax 255
+field file --fieldName image --contentType JPG
+field reference --fieldName createdBy --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+service --interface ~.service.EquipService  --entity ~.domain.Equip
+dod
+entity jpa --class ~.domain.League 
+field string --fieldName name --notNull
+field string --fieldName description --sizeMax 255
+field file --fieldName image --contentType JPG
+field reference --fieldName createdBy --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+service --interface ~.service.LeagueService  --entity ~.domain.League
+dod
+entity jpa --class ~.domain.SportType 
+field string --fieldName name --notNull
+field string --fieldName description --sizeMax 255
+field file --fieldName image --contentType JPG
+field reference --fieldName createdBy --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+service --interface ~.service.SportTypeService  --entity ~.domain.SportType
+dod
+entity jpa --class ~.domain.Rencontre 
+field reference --fieldName equipeA --type ~.domain.Equip --cardinality MANY_TO_ONE
+field reference --fieldName equipeB --type ~.domain.Equip --cardinality MANY_TO_ONE
+field date --fieldName CreationDate --type java.util.Date --dateTimeFormatPattern "dd-MM-yyyy HH :mm:ss" --persistenceType JPA_TIMESTAMP
+field string --fieldName lieu
+field date --fieldName rencontreDate --type java.util.Date --dateTimeFormatPattern "dd-MM-yyyy HH :mm:ss" --persistenceType JPA_TIMESTAMP
+field reference --fieldName sporttype --type ~.domain.SportType --cardinality MANY_TO_ONE
+field reference --fieldName league --type ~.domain.League --cardinality MANY_TO_ONE
+field reference --fieldName createdBy --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+service --interface ~.service.RencontreService  --entity ~.domain.Rencontre
+dod
+entity jpa --class ~.domain.CategoryParis 
+field string --fieldName name --notNull
+field string --fieldName description --sizeMax 255
+field reference --fieldName createdBy --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+service --interface ~.service.CategoryParisService  --entity ~.domain.CategoryParis
+dod
+entity jpa --class ~.domain.Event 
+field string --fieldName name --notNull
+field string --fieldName description --sizeMax 255
+field reference --fieldName createdBy --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+service --interface ~.service.EventService  --entity ~.domain.Event
+dod
+entity jpa --class ~.domain.Paris 
+field reference --fieldName rencontre --type ~.domain.Rencontre --cardinality MANY_TO_ONE
+field reference --fieldName categoryParis --type ~.domain.CategoryParis --cardinality MANY_TO_ONE
+field reference --fieldName event --type ~.domain.Event --cardinality MANY_TO_ONE
+field date --fieldName dateOfCreation --type java.util.Date --dateTimeFormatPattern "dd-MM-yyyy HH :mm:ss" --persistenceType JPA_TIMESTAMP
+field date --fieldName dateOfClose --type java.util.Date --dateTimeFormatPattern "dd-MM-yyyy HH :mm:ss" --persistenceType JPA_TIMESTAMP
+field number --fieldName cote --type java.math.BigDecimal --notNull
+field enum --fieldName etat --type ~.domain.Etat
+field reference --fieldName createdBy --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+service --interface ~.service.PariseService  --entity ~.domain.Paris
+dod
+entity jpa --class ~.domain.Panier 
+field reference --fieldName userAccount --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+field date --fieldName dateOfCreation --type java.util.Date --dateTimeFormatPattern "dd-MM-yyyy HH :mm:ss" --persistenceType JPA_TIMESTAMP
+field number --fieldName montant --type java.math.BigDecimal --notNull
+field number --fieldName gaintotal --type java.math.BigDecimal --notNull
+service --interface ~.service.PanierService  --entity ~.domain.Panier
+dod
+entity jpa --class ~.domain.Choix 
+field reference --fieldName paris --type ~.domain.Paris --cardinality MANY_TO_ONE
+field number --fieldName montantParis --type java.math.BigDecimal --notNull
+field number --fieldName gain --type java.math.BigDecimal --notNull
+field reference --fieldName panier --type ~.domain.Panier --cardinality MANY_TO_ONE
+service --interface ~.service.ChoixService  --entity ~.domain.Choix
+dod
+entity jpa --class ~.domain.Deposit 
+field reference --fieldName userAccount --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+field number --fieldName montant --type java.math.BigDecimal --notNull
+field date --fieldName dateOfCreation --type java.util.Date --dateTimeFormatPattern "dd-MM-yyyy HH :mm:ss" --persistenceType JPA_TIMESTAMP
+field string --fieldName description --sizeMax 255
+field reference --fieldName createdBy --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+service --interface ~.service.DepositService  --entity ~.domain.Deposit
+dod
+entity jpa --class ~.domain.Retrait 
+field reference --fieldName userAccount --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+field number --fieldName montant --type java.math.BigDecimal --notNull
+field date --fieldName dateOfCreation --type java.util.Date --dateTimeFormatPattern "dd-MM-yyyy HH :mm:ss" --persistenceType JPA_TIMESTAMP
+field string --fieldName description --sizeMax 255
+field reference --fieldName createdBy --type ~.domain.UserAccount --cardinality MANY_TO_ONE
+service --interface ~.service.RetraitService  --entity ~.domain.Retrait
+dod
+// [failed] script --file djambo.roo
+web jsf setup --theme START
+web jsf all --package ~.web
+logging setup --level WARN
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-12-10 15:22:41
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-12-10 15:22:47
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-12-10 15:27:10
+finder list --class ~.domain.Paris
+finder add findParisesByRencontre
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-12-18 09:59:09
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-12-21 11:39:35
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-12-28 11:50:57
+pgp automatic trust
+addon list 
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-12-28 12:04:32
+osgi obr url add --url http://spring-roo-repository.springsource.org/repository.xml
+// [failed] addon install id --searchResultId 34
+pgp automatic trust
+osgi obr url add --url http://spring-roo-repository.springsource.org/repository.xml
+// [failed] addon install bundle --bundleSymbolicName org.springframework.roo.addon.cloud.foundry
